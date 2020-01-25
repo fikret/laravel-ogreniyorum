@@ -1,7 +1,86 @@
+
 # laravel-ogreniyorum
 Laravel öğrenirken kullandığım kaynaklar ve ipuçları
 
 ## Kurulum
+Homestead ile bilgisayarına sanal Laravelin gereksinimlerini içeren bir sanal makina kurmalısın. Böylece bilgisayarını kirletmeden bir sunucun olacak. Bunu yapabilmek için vagrant bize yardımcı olacak. Tüm bunlarla ilgili detaylı ingilizce döküman [şurada](https://laravel.com/docs/6.x/homestead) var. Homestead'in başka bir avantajı da Laravelin yeni sürümlerinde gereksinimleri otomatik olarak alması.
+### Gereksinimler
+[Virtualbox](https://www.virtualbox.org/wiki/Downloads), [vagrant](https://www.vagrantup.com/downloads.html)
+Makinada mutlaka bi ssh key olması gerekiyor. Bunu yapmadan başlama
+#### Nasıl SSH Key Yaparım?
+`ssh-keygen -t rsa -b 4096 -C "email@example.com"`
+O ne lan diyenler için [şurda](https://docs.gitlab.com/ee/ssh/README.html#generating-a-new-ssh-key-pair) detaylar var
+
+### Yapılacaklar
+
+```sh
+vagrant box add laravel/homestead
+```
+Terminalden bunu yazdığımızda laravel için gerekli olan sanal makina indirilecek bu epey sürüyor.
+Terminal açılıp ana dizindeyken şu kodu çalıştırıp
+```sh
+git clone https://github.com/laravel/homestead.git ~/Homestead
+```
+```sh
+cd ~/Homestead
+
+git checkout release
+```
+
+```sh
+bash init.sh
+```
+
+Şimdi sırada Config dosyasını ayarlamak var.  ~/Homestead/Homestead.yml dosyasını açıp aşağıdaki şekilde düzenle
+
+```sh
+---
+ip: "192.168.10.10"
+memory: 2048
+cpus: 2
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: ~/code
+      to: /home/vagrant/code
+
+sites:
+    - map: homestead.test
+      to: /home/vagrant/code/project1/public
+
+databases:
+    - homestead
+
+features:
+    - mariadb: false
+    - ohmyzsh: false
+    - webdriver: false
+
+```
+Makinandan **~/code dizinine project1/public** dizini oluştur içine index.html dosyası at test için
+
+**host dosyasında 192.168.10.10 adresine homestead.test** ataması yap
+
+Bundan sonra şu komutlarla sanal makinayı tekrar başlat
+
+    vagrant reload --provision
+
+olmazsa
+
+    vagrant halt
+    vagrant provision
+
+dene
+
+
+### Kurulum Hataları ve Çözümler
+"No input file specified." hatası alıyorsan Homestead.yml dosyanda map kısmını yanlış yapmışsın demektir.
+
 
 ## Deployment
 
