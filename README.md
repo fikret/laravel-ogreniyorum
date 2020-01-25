@@ -1,7 +1,9 @@
 
-# laravel-ogreniyorum
+# Laravel Öğreniyorum
 Laravel öğrenirken kullandığım kaynaklar ve ipuçları
 Bu notlar MAC cihazda yaptığım uygulamalarda alınmıştır. 
+
+**NOT:** Lütfen siz de katkıda bulunun.
 
 ## Kurulum
 Homestead ile bilgisayarına Laravelin gereksinimlerini içeren bir sanal makina kurmalısın. Böylece bilgisayarını kirletmeden bir sunucun olacak. Bunu yapabilmek için vagrant bize yardımcı olacak. Tüm bunlarla ilgili detaylı ingilizce döküman [şurada](https://laravel.com/docs/6.x/homestead) var. Homestead'in başka bir avantajı da Laravelin yeni sürümlerinde gereksinimleri otomatik olarak alması.
