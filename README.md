@@ -1,9 +1,7 @@
 
-# Laravel Öğreniyorum
+# laravel-ogreniyorum
 Laravel öğrenirken kullandığım kaynaklar ve ipuçları
 Bu notlar MAC cihazda yaptığım uygulamalarda alınmıştır. 
-
-**NOT:** Lütfen siz de katkıda bulunun.
 
 ## Kurulum
 Homestead ile bilgisayarına Laravelin gereksinimlerini içeren bir sanal makina kurmalısın. Böylece bilgisayarını kirletmeden bir sunucun olacak. Bunu yapabilmek için vagrant bize yardımcı olacak. Tüm bunlarla ilgili detaylı ingilizce döküman [şurada](https://laravel.com/docs/6.x/homestead) var. Homestead'in başka bir avantajı da Laravelin yeni sürümlerinde gereksinimleri otomatik olarak alması.
@@ -91,6 +89,19 @@ vagrant'ın desteklediği virtualbox'ın sistemde kurulu olduğundan emin ol son
 
 SSH key yoksa bu konuda hata verecektir. [Gereksinimlere](#Gereksinimler) bakmalısın.
 
+## Laravel Dizinleri
+### Routes
+#### web.php
+Tarayıcından sitemize gelen kullanıcıları karşılayan dosyadır. Kullanıcılar nereye gidecekse bu dosya üzerinden ayarlanır. Sitemizdeki URL yapısını ayarlamamızı sağlar. Bunun içinde yaptığımız işler klasik tüm sayfanın yüklenmesi şeklinde çalışıyor. Buradaki yetkilendirme oturum(cookie) üzerinden yürür.
+
+#### api.php
+apiler için kullanılır. Tüm sayfanın yüklenmesi gerekmeyen durumlarda kullanılır. Ayrıca yetkilendirmeler yapılır. Bu yetkilendirme cookie'ye dayalı değildir.
+
+#### channels.php
+Kullanıcıların belli kanallara abone olup oradan anlık bildiriml almalarını sağlar.
+
+#### console.php
+http'yi aradan kaldırıp doğrudan console işlemleri yapmamızı sağlar
 
 ## Deployment
 
