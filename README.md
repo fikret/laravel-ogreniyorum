@@ -1,4 +1,5 @@
 
+
 # Laravel Öğreniyorum
 Laravel öğrenirken kullandığım kaynaklar ve ipuçları
 Bu notlar MAC cihazda yaptığım uygulamalarda alınmıştır. 
@@ -129,5 +130,7 @@ http'yi aradan kaldırıp doğrudan console işlemleri yapmamızı sağlar
 
 
 ## Diğer Kaynaklar
-- [HTTP Statuses](https://httpstatuses.com/)
+- [HTTP Statuses](https://httpstatuses.com/) HTTP ststus kodları
 - [HTTPBIN](http://httpbin.org)
+- [PHP Standards Recommendations](https://www.php-fig.org/psr/)
+- [PHP Magic Methods](https://www.php.net/manual/tr/language.oop5.magic.php)
