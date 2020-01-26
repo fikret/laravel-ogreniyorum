@@ -169,10 +169,12 @@ composer json dan çekilip içeriye kopyalanan paketlerin bulunduğu dizin
 ### webpack.mix.js
 webpack ayarları
 
-## Kulldığımız Çeşitli Komutlar
+## Kullandığımız Çeşitli Komutlar
 ### Model oluşturmak
 
+
     php artisan make:model TodoItem -mc
+
  TodoItem
  -m migration oluştur
  -c ise controller oluştur demek
@@ -181,6 +183,29 @@ webpack ayarları
  app/Http/controller içinde TodoItemController.php dosyası oluşur
  database/migraiton içinde ise
  2020_01_26_084500_create_todo_items_table.php dosyası oluşur.
+migration dosyasına gidilip database için gerekli eklemeler yapılır
+https://laravel.com/docs/6.x/migrations
+
+Bu işlemlerden sonra aşağıdaki komut çalıştırılır.
+
+    php artisan migrate
+Bu komut çalıştığında veritabanı **migration** dosyası çalışır ve veritabanı tabloları oluşur.
+
+
+------------
+
+
+    php artisan tinker
+Larvel içindeki kodların çalışıp çalışmadığını test etmek için kullanılır. Bunun güzelliği  bir php dosya oluşturmadan yapmış olduğumuz modelleri istediğimiz gibi test edebilmek
+ör:
+```shell
+$todo = new App\TodoItem;
+$todo->text = "Öğle yemeğine çıkılacak";
+$todo->save();
+$todo;
+App\TodoItem::all();
+```
+
  
 
 ## Diğer Kaynaklar
