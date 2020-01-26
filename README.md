@@ -1,5 +1,5 @@
 
-# laravel-ogreniyorum
+# Laravel Öğreniyorum
 Laravel öğrenirken kullandığım kaynaklar ve ipuçları
 Bu notlar MAC cihazda yaptığım uygulamalarda alınmıştır. 
 
@@ -80,6 +80,31 @@ olmazsa
     vagrant provision
 
 dene
+
+Test etmek için homestead.test sayfasını tarayıcıda aç. Yüklediğin html dosya açılıyorsa başarılı şekilde dev ortamı hazır demektir.
+
+Şimdi sırada Laravel'in yüklenmesi var.
+
+ 1. List ite
+	Bilgisayarında terminalden `vagrant ssh` yazıp Homestead sanal makinamıza erişelim
+ 2. vagrantın home dizinindeyken composer ile laravel installer kuralım `composer global require laravel/installer`
+ 3. Daha sonra projelerimizin hepsinin olduğu ana dizin olan code dizinine geçelim ve şu kodu çalıştırıp laravel uygulamasını yükleyelim. `composer create-project --prefer-dist laravel/laravel projeninadi`
+ 4. Şimdi bu proje hangi sitemiz için oluşturuldu bunu sanal makinadan çıkıp homestead.yaml dosyamıza yazıp ayrıca kendi bilgisayarımızda host dosyasına yazalım.
+ nano Homestead.yaml
+
+     sites:
+        - map: homestead.test
+          to: /home/vagrant/code/project1/public
+    
+        - map: yeniprojem.test
+          to: /home/vagrant/code/projeninadi/public
+dikkat edilirse ikinci sıradaki map kısmını yeni ekledik. Kaydedip çıkın sonrasında ise yeniprojem.test sayfasını host dosyasına da eklemeliyiz.
+
+ 6. Yukarıdaki işlemlerden sonra sanal makinamızı yeniden çalıştırmalıyız bunun için şu kodu çalıştırın
+	 
+
+    vagrant reload --provision
+
 
 
 ### Kurulum Hataları ve Çözümler
