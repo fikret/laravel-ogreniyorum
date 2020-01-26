@@ -91,21 +91,20 @@ Test etmek için homestead.test sayfasını tarayıcıda aç. Yüklediğin html 
  3. Daha sonra projelerimizin hepsinin olduğu ana dizin olan code dizinine geçelim ve şu kodu çalıştırıp laravel uygulamasını yükleyelim. `composer create-project --prefer-dist laravel/laravel projeninadi`
  4. Şimdi bu proje hangi sitemiz için oluşturuldu bunu sanal makinadan çıkıp homestead.yaml dosyamıza yazıp ayrıca kendi bilgisayarımızda host dosyasına yazalım.
  nano Homestead.yaml
-
-     sites:
+     
+        sites:
         - map: homestead.test
           to: /home/vagrant/code/project1/public
     
         - map: yeniprojem.test
           to: /home/vagrant/code/projeninadi/public
-dikkat edilirse ikinci sıradaki map kısmını yeni ekledik. Kaydedip çıkın sonrasında ise yeniprojem.test sayfasını host dosyasına da eklemeliyiz.
-
+          
+Dikkat edilirse ikinci sıradaki map kısmını yeni ekledik. Kaydedip çıkın sonrasında ise **yeniprojem.test sayfasını host** dosyasına da eklemeliyiz.
  6. Yukarıdaki işlemlerden sonra sanal makinamızı yeniden çalıştırmalıyız bunun için şu kodu çalıştırın
-	 
-
+ 
     vagrant reload --provision
 
-
+Sanal makina açıldıktan sonra tarayıcıya yeniprojem.test yazdığınızda laravel karşılama ekranını görmelisiniz.
 
 ### Kurulum Hataları ve Çözümler
 "No input file specified." hatası alıyorsan Homestead.yml dosyanda map kısmını yanlış yapmışsın demektir.
@@ -128,14 +127,6 @@ Kullanıcıların belli kanallara abone olup oradan anlık bildiriml almaların�
 #### console.php
 http'yi aradan kaldırıp doğrudan console işlemleri yapmamızı sağlar
 
-## Deployment
-
-## CI
-
-## Localde Çalışmak
-
-## Sunucuyu Ayarlamak
-Sunucuda WordPress için de kullandığım WordOps kullanıyorum böylece SSL işlemleri vb. süreçler daha kolaylaşıyor. ayrıca içinde pek çok stack var.
 
 ## Diğer Kaynaklar
 - [HTTP Statuses](https://httpstatuses.com/)
