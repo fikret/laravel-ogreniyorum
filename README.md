@@ -214,3 +214,4 @@ App\TodoItem::all();
 - [PHP Standards Recommendations](https://www.php-fig.org/psr/)
 - [PHP Magic Methods](https://www.php.net/manual/tr/language.oop5.magic.php)
 - [Test Driven Laravel](https://course.testdrivenlaravel.com/)
+- [Markdown Editör](https://pandao.github.io/editor.md/en.html)
