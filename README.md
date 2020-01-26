@@ -115,7 +115,37 @@ vagrant'ın desteklediği virtualbox'ın sistemde kurulu olduğundan emin ol son
 SSH key yoksa bu konuda hata verecektir. [Gereksinimlere](#Gereksinimler) bakmalısın.
 
 ## Laravel Dizinleri
-### Routes
+### app
+### artisan
+php ile ilgili yardımcı işmeleri yapar
+### bootstrap
+uygulamanın ayağa kalkması için gereken ayarlar
+### composer.json
+composer ile ilgili paketler
+### composer.lock
+composer ile ilgili paket yüklemelerin son andaki her paketin bilgisini tutar
+### config
+her konunun kendine özel ayar dosyası var.
+### database
+veritabanı migrationlar burada
+seederlar burada - uygulamanın çalışablmesi için veritabanında olması gereken veriler buraya eklenir.
+### .editorconfig
+editör ayarları (laravelle ilgili değil)
+### .env
+en önemli dosya. Laraveli sihirli hale getirir.
+### .gitattributes
+git tanımlamaları
+### .gitignore
+git'e gönderilmeyecek 
+### package.json
+önyüzle alakalı npm'in bağımlılıkları burada
+### phpunit.xml
+unit testlerle ilgili. Uygulama içi test yazmaya yarar. detayları tests dizininde oluyor. 
+### public
+projenin dışarıya açık tek klasörü
+### resources
+geliştirme ortamı verileri bulunur
+### routes
 #### web.php
 Tarayıcından sitemize gelen kullanıcıları karşılayan dosyadır. Kullanıcılar nereye gidecekse bu dosya üzerinden ayarlanır. Sitemizdeki URL yapısını ayarlamamızı sağlar. Bunun içinde yaptığımız işler klasik tüm sayfanın yüklenmesi şeklinde çalışıyor. Buradaki yetkilendirme oturum(cookie) üzerinden yürür.
 
@@ -128,9 +158,34 @@ Kullanıcıların belli kanallara abone olup oradan anlık bildiriml almaların�
 #### console.php
 http'yi aradan kaldırıp doğrudan console işlemleri yapmamızı sağlar
 
+### server.php
+hoca bilmiyor
+### storage
+cacheler, uygulama ile ilgili bazı dosyalar, loglar bulunur
+### tests
+testler burada yazılıyor.
+### vendor
+composer json dan çekilip içeriye kopyalanan paketlerin bulunduğu dizin
+### webpack.mix.js
+webpack ayarları
+
+## Kulldığımız Çeşitli Komutlar
+### Model oluşturmak
+
+    php artisan make:model TodoItem -mc
+ TodoItem
+ -m migration oluştur
+ -c ise controller oluştur demek
+ komut çalışınca app dizini içinde
+ TodoItem.php dosyası oluşur
+ app/Http/controller içinde TodoItemController.php dosyası oluşur
+ database/migraiton içinde ise
+ 2020_01_26_084500_create_todo_items_table.php dosyası oluşur.
+ 
 
 ## Diğer Kaynaklar
 - [HTTP Statuses](https://httpstatuses.com/) HTTP ststus kodları
 - [HTTPBIN](http://httpbin.org)
 - [PHP Standards Recommendations](https://www.php-fig.org/psr/)
 - [PHP Magic Methods](https://www.php.net/manual/tr/language.oop5.magic.php)
+- [Test Driven Laravel](https://course.testdrivenlaravel.com/)
