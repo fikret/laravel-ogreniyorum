@@ -215,3 +215,8 @@ App\TodoItem::all();
 - [PHP Magic Methods](https://www.php.net/manual/tr/language.oop5.magic.php)
 - [Test Driven Laravel](https://course.testdrivenlaravel.com/)
 - [Markdown Editör](https://pandao.github.io/editor.md/en.html)
+- [Laravel Eloquent](https://laravel.com/docs/5.8/eloquent)
+- [Laravel Request Lifecycle](https://laravel.com/docs/6.x/lifecycle)
+- [Laravel Passport](https://laravel.com/docs/master/passport)
+- [OAuth 2.0 Terminology](https://oauth2.thephpleague.com/terminology/)
+- [JSON Web Token Authentication for Laravel & Lumen](https://jwt-auth.readthedocs.io/en/develop/)
